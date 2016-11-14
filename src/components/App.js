@@ -1,6 +1,5 @@
 import React from 'react';
-import Celsius from './Celsius';
-import Fahrenheit from './Fahrenheit';
+import TemperatureInput from './TemperatureInput';
 import BoilOrNot from './BoilOrNot';
 
 class App extends React.Component {
@@ -12,12 +11,10 @@ class App extends React.Component {
             c : 0,
             f : 0
         };
+
         this.handleInputCelsius = this.handleInputCelsius.bind(this);
         this.handleInputFahrenheit = this.handleInputFahrenheit.bind(this);
-
     }
-
-
 
     handleInputCelsius(e){
         //console.log("input Celsius");
@@ -46,12 +43,11 @@ class App extends React.Component {
         return (
             <div>
                 <h1>Celsius To Fahrenheit Calculator</h1>
-                <Celsius c = {this.state.c}
-                        onChange = {this.handleInputCelsius}
-                        />
-                <Fahrenheit f = {this.state.f}
-                        onChange = {this.handleInputFahrenheit}
-                        />
+                Input Celsius : <TemperatureInput value = {this.state.c}
+                                                onChange = {this.handleInputCelsius}/><br/>
+                Input Fahrenheit : <TemperatureInput
+                                                value = {this.state.f}
+                                                onChange = {this.handleInputFahrenheit}/>
                 <hr/>
                 <BoilOrNot c = {this.state.c}/>
             </div>
