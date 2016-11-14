@@ -12,7 +12,7 @@ class BoilOrNot extends Component {
         const viewForBoil = <div>물이 끓습니다</div>;
         const viewForNotBoil = <div>물이 안끓음</div>;
 
-        const view = this.props.c > 100 ? viewForBoil : viewForNotBoil;
+        const view = this.props.c >= 100 ? viewForBoil : viewForNotBoil;
         return(
             <div>{view}</div>
         );
